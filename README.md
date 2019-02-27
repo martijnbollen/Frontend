@@ -6,7 +6,7 @@ Dit is de [online url](https://martijnbollen.github.io/Frontend) met de opdracht
 
 Het vak bestaat uit 3 opdrachten:
 
-1. [Opdracht 1](https://martijnbollen.github.io/Frontend/opdracht1/index.html)
+1. [Opdracht 1](https://martijnbollen.github.io/Frontend/opdracht1/)
 2. [Opdracht 2](opdracht2/)
 3. [Opdracht 3](opdracht3/)
 
