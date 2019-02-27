@@ -1,6 +1,6 @@
 # frontend voor designers
 
-In het vak Frontend voor Designers leer je hoe je met HTML en CSS, en een beetje Javascript, snel en eenvoudig prototypes kan maken om je ontwerp ideeën te testen in een browser. We gaan animeren, responsive layouts uitproberen en interactie coderen ...
+Tijdens dit vak krijgen we allerlei opdrachten om ons coderen te testen. HTML, CSS, Javascript, het komt allemaal langs.
 
 Dit is de [online url](https://martijnbollen.github.io/Frontend) met de opdrachten om te kunnen bekijken en testen in een browser.
 
