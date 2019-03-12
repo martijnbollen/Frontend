@@ -1,0 +1,49 @@
+#center {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+}
+
+.bar img {
+    height: 125px;
+    margin: auto;
+    padding: 0px;
+    width: 197px;
+}
+
+.bar {
+    width: 800px;
+    margin-left: 3em;
+}
+
+.active {
+    border: 3px solid black;
+}
+
+div {
+    margin: 0px;
+    padding: 0px;
+}
+
+button {
+    background-color: white;;
+    height: 4em;
+    width: 4em;
+    border: none;
+    position: relative;
+    top: -20em;
+}
+
+button:first-of-type {
+    background-image: url(../img/left.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+button:nth-of-type(2) {
+    background-image: url(../img/right.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
