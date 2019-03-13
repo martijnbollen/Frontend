@@ -1,49 +1,79 @@
 #center {
-    width: 800px;
+    width: 90%;
     height: 500px;
-    margin: auto;
+    padding: 0% 5%;
 }
 
 .bar img {
     height: 125px;
-    margin: auto;
     padding: 0px;
-    width: 197px;
+    width: 24.5%;
 }
 
 .bar {
-    width: 800px;
-    margin-left: 3em;
+    width: 90%;
+    padding: 0% 5%;
 }
 
 .active {
     border: 3px solid black;
 }
 
-div {
-    margin: 0px;
-    padding: 0px;
+.centerpiece {
+    margin: 0%;
+    padding: 0%;
 }
 
-button {
+.centerpiece button {
     background-color: white;;
     height: 4em;
-    width: 4em;
+    width: 4.5%;
     border: none;
-    position: relative;
-    top: -20em;
+    position: absolute;
 }
 
-button:first-of-type {
+.centerpiece button:first-of-type {
     background-image: url(../img/left.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    left: 0%;
+    top: 50%;
+
 }
 
-button:nth-of-type(2) {
+.centerpiece button:nth-of-type(2) {
     background-image: url(../img/right.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    right: 0%;
+    top: 50%;
+}
+
+.bar button {
+    background-color: white;;
+    height: 4em;
+    width: 5%;
+    border: none;
+    position: absolute;
+}
+
+.bar button:first-of-type {
+    background-image: url(../img/dblleft.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    left: 0%;
+    top: 82%;
+
+}
+
+.bar button:nth-of-type(2) {
+    background-image: url(../img/dblright.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    right: 0%;
+    top: 82%;
 }
