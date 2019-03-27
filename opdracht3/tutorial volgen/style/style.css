@@ -2,10 +2,37 @@
     font-family: Avenir, Verdana, sans-serif;
 }
 
+h1 {
+    text-align: center;
+    margin: 1.2em 0 0 0;
+}
+
 button {
-    width: 14em;
+    width: 10em;
     height: 3em;
     border: 1px solid black;
     border-radius: 0.5em;
     background-color: white;
+    margin: 1em auto;
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+}
+aside {
+    border: 1px solid black;
+    padding: 1em 1em;
+    margin: 0em;
+    width: 11.3em;
+    height: 10em;
+    visibility: hidden;
+    position: absolute;
+
+}
+aside p {
+    margin: 0 0 0.5em 0;
+    width: 12em;
+}
+aside h3 {
+    font-size: 1em;
+    margin-bottom: 1em;
 }

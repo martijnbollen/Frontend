@@ -19,20 +19,27 @@ request.onload = function() {
 function invullenHeader(jsonObj) {
     var myH1 = document.createElement('h1');
     var weather = jsonObj["weather"];
-    myH1.textContent = weather[0].description;
     header.appendChild(myH1);
     console.log(weather);
-
+    var myH3 = document.createElement('h3');
     var myPara1 = document.createElement('p');
     var myPara2 = document.createElement('p');
     var wind = jsonObj["wind"];
+    myH3.textContent ='Weersomstandigheden:';
+    aside.appendChild(myH3);
     myPara1.textContent = 'Windkracht: ' + wind.speed;
     aside.appendChild(myPara1);
     console.log(wind.speed);
     var windkracht = wind.speed;
     var main = jsonObj["main"];
-    myPara2.textContent = main.temp;
+    myPara2.textContent = 'Temperatuur: ' + main.temp;
+    aside.appendChild(myPara2);
     knop.addEventListener('click', function() {
+        aside.style.position = 'relative';
+        aside.style.top = '-2em';
+        knop.style.visibility = 'hidden';
+        myH1.textContent = weather[0].description;
+        aside.style.visibility = 'visible';
         if (windkracht >= 5 && temperatuur >= 10) {
             myH2.textContent = 'Ja! Je kan vandaag gaan kitesurfen. Het is lekker warm en er staat een goede wind.';
             console.log('topweer');
@@ -50,6 +57,7 @@ function invullenHeader(jsonObj) {
         else {
             myH2.textContent = 'Nee, helaas. Het weer is niet goed en er staat niet genoeg wind om te surfen.';
             console.log('Nope');
+            afbeelding.src = 'img/nokitesurf.gif';
         }
     });
     var temperatuur= main.temp;
