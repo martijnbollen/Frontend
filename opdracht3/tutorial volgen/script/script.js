@@ -14,9 +14,7 @@ request.send();
 request.onload = function() {
     var weer = request.response;
     invullenHeader(weer);
-//    showWind(weer);
 }
-//console.log(data);
 
 function invullenHeader(jsonObj) {
     var myH1 = document.createElement('h1');
