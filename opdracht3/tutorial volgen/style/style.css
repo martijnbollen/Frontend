@@ -18,8 +18,17 @@ button {
     font-weight: bold;
     display: block;
 }
-image {
+
+.kompas {
+    height: 2.5em;
+    width: 2.5em;
+    position: absolute;
+    left: 9em;
+    top: 3.6em;
 }
+
+
+
 
 h2 {
     text-align: center;
