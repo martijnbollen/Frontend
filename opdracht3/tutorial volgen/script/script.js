@@ -11,10 +11,10 @@ request.open('GET', requestURL);
 request.responseType = 'json';
 request.send();
 
-request.onload = function() {
+request.onload = function () {
     var weer = request.response;
     invullenHeader(weer);
-}
+};
 
 function invullenHeader(jsonObj) {
     var myH1 = document.createElement('h1');
@@ -29,12 +29,18 @@ function invullenHeader(jsonObj) {
     aside.appendChild(myH3);
     myPara1.textContent = 'Windkracht: ' + wind.speed;
     aside.appendChild(myPara1);
+    var windrichting = document.createElement('img');
+    windrichting.src = '../img/kompas.png';
+    aside.appendChild(windrichting);
     console.log(wind.speed);
     var windkracht = wind.speed;
     var main = jsonObj["main"];
-    myPara2.textContent = 'Temperatuur: ' + main.temp;
+    var temperatuur = main.temp;
+    console.log(temperatuur);
+    myPara2.textContent = 'Temperatuur: ' + temperatuur + ' °C';
     aside.appendChild(myPara2);
     knop.addEventListener('click', function() {
+        console.log(windrichting);
         aside.style.position = 'relative';
         aside.style.top = '-2em';
         knop.style.visibility = 'hidden';
@@ -45,23 +51,20 @@ function invullenHeader(jsonObj) {
             console.log('topweer');
             afbeelding.src = 'img/kitesurf.gif';
         }
-        else if (windkracht < 5 && temperatuur >= 10) {
+         else if (windkracht < 5 && temperatuur >= 10) {
             myH2.textContent = 'Hmm... Ik weet het niet zeker. Het is lekker weer, maar ik weet niet zeker of er genoeg wind staat.';
             afbeelding.src = 'img/nokitesurf.gif';
-            console.log('Mwa..');
+
         }
-        else if (windkracht >= 5 && temperatuur < 10) {
+         else if (windkracht >= 5 && temperatuur < 10) {
             myH2.textContent = 'Hmmm... Ik weet het niet zeker. Er is genoeg wind om te surfen, maar het weer is niet top.';
-            console.log('Hmmm..');
+
         }
-        else {
+         else {
             myH2.textContent = 'Nee, helaas. Het weer is niet goed en er staat niet genoeg wind om te surfen.';
-            console.log('Nope');
             afbeelding.src = 'img/nokitesurf.gif';
         }
     });
-    var temperatuur= main.temp;
-
 }
 
 
