@@ -44,7 +44,7 @@ function invullenHeader(jsonObj) {
     aside.appendChild(myPara2);
     knop.addEventListener('click', function() {
         console.log(windrichting);
-        document.querySelector('h1').textContent = 'Kan ik vandaag kitesurfen in ' + cityID + '?'; windrichting.classList.add('kompas');
+//        document.querySelector('h1').textContent = 'Kan ik vandaag kitesurfen in ' + cityID + '?'; windrichting.classList.add('kompas');
         windrichting.style.transform = 'rotate('+ richting + 'deg)';
         aside.style.position = 'relative';
         aside.style.top = '-2em';
