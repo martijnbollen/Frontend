@@ -21,8 +21,12 @@ request.onload = function () {
     invullenHeader(weer);
 };
 
+
     function invullenHeader(jsonObj) {
+        var titel = document.querySelector('h1');
+        titel.textContent = 'Kan ik vandaag kitesurfen in ' + cityID + '?';
         var myH1 = document.createElement('h1');
+        myH1.style.textTransform = 'capitalize';
         var weather = jsonObj["weather"];
         header.appendChild(myH1);
         console.log(weather);
@@ -36,34 +40,34 @@ request.onload = function () {
         aside.appendChild(myPara1);
         var windrichting = document.createElement('img');
         windrichting.src = '../img/kompas.png';
+        windrichting.classList.add('kompas');
         var richting = wind.deg;
-        console.log(wind.speed);
+        aside.appendChild(windrichting);
         var windkracht = wind.speed;
         var main = jsonObj["main"];
         var temperatuur = main.temp;
-        console.log(temperatuur);
         myPara2.textContent = 'Temperatuur: ' + temperatuur + ' °C';
         aside.appendChild(myPara2);
-
-            afbeelding.style.width = '5em';
-            artikel.style.visibility = 'hidden';
-    //        windrichting.style.transform = 'rotate('+ richting + 'deg)';
-            aside.style.position = 'relative';
-            aside.style.top = '-2em';
-            knop.style.visibility = 'hidden';
-            myH1.textContent = weather[0].description;
-            aside.style.visibility = 'visible';
+        afbeelding.style.width = '20em';
+        artikel.style.visibility = 'hidden';
+        windrichting.style.transform = 'rotate(' + richting + 'deg)';
+        aside.style.position = 'relative';
+        aside.style.top = '-2em';
+        knop.style.display = 'none';
+        myH1.textContent = weather[0].description;
+        aside.style.visibility = 'visible';
             if (windkracht >= 5 && temperatuur >= 10) {
                 myH2.textContent = 'Ja! Je kan vandaag gaan kitesurfen. Het is lekker warm en er staat een goede wind.';
                 afbeelding.src = 'img/kitesurf.gif';
             }
              else if (windkracht < 5 && temperatuur >= 10) {
                 myH2.textContent = 'Hmm... Ik weet het niet zeker. Het is lekker weer, maar ik weet niet zeker of er genoeg wind staat.';
-                afbeelding.src = 'img/nokitesurf.gif';
+
 
             }
              else if (windkracht >= 5 && temperatuur < 10) {
                 myH2.textContent = 'Hmmm... Ik weet het niet zeker. Er is genoeg wind om te surfen, maar het weer is niet top.';
+                 afbeelding.src = 'img/nokitesurf.gif';
 
             }
              else {
