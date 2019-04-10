@@ -2,6 +2,10 @@
     font-family: Avenir, Verdana, sans-serif;
 }
 
+body {
+    background-color: skyblue;
+}
+
 h1 {
     text-align: center;
     margin: 1.2em 0 0 0;
@@ -27,22 +31,29 @@ button {
     top: 3.6em;
 }
 
-
-
-
 h2 {
     text-align: center;
     width: 30em;
     margin: 0 auto;
 }
+
+section {
+    width: 100%;
+    height: 20em;
+    background-color: ##333A83;
+}
+
 aside {
-    border: 1px solid black;
-    padding: 1em 1em;
+    padding: 4em 5em;
     margin: 0em;
     width: 11.3em;
     height: 10em;
     visibility: hidden;
     position: absolute;
+    background-image: url('../img/wolk.png');
+    background-size: 22em;
+    background-repeat: no-repeat;
+    background-position: top center;
 
 }
 aside p {

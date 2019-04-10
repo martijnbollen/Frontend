@@ -3,9 +3,14 @@ var section = document.querySelector('section');
 var aside = document.querySelector('aside');
 var myH2 = document.querySelector('h2');
 var afbeelding = document.querySelector('img');
-var knop = document.querySelector('button');
-var requestURL = 'http://api.openweathermap.org/data/2.5/weather?q=Amsterdam&units=metric&APPID=15ab71533f173d32e3e44c893b687553';
-var request = new XMLHttpRequest();
+var artikel = document.querySelector('article');
+var knoppen = document.querySelectorAll('button');
+
+knoppen.forEach(function(knop)  {
+    knop.addEventListener("click", function() {
+    var cityID = this.getAttribute('value');
+    var requestURL = 'http://api.openweathermap.org/data/2.5/weather?q=' + cityID + '&units=metric&APPID=15ab71533f173d32e3e44c893b687553';
+    var request = new XMLHttpRequest();
 
 request.open('GET', requestURL);
 request.responseType = 'json';
@@ -32,9 +37,6 @@ function invullenHeader(jsonObj) {
     var windrichting = document.createElement('img');
     windrichting.src = '../img/kompas.png';
     var richting = wind.deg;
-    console.log(richting);
-
-    aside.appendChild(windrichting);
     console.log(wind.speed);
     var windkracht = wind.speed;
     var main = jsonObj["main"];
@@ -42,10 +44,13 @@ function invullenHeader(jsonObj) {
     console.log(temperatuur);
     myPara2.textContent = 'Temperatuur: ' + temperatuur + ' °C';
     aside.appendChild(myPara2);
-    knop.addEventListener('click', function() {
-        console.log(windrichting);
-//        document.querySelector('h1').textContent = 'Kan ik vandaag kitesurfen in ' + cityID + '?'; windrichting.classList.add('kompas');
-        windrichting.style.transform = 'rotate('+ richting + 'deg)';
+
+    knoppen.forEach(function(knop) {
+    knop.addEventListener("click", function() {
+        var cityID = this.getAttribute('value');
+        afbeelding.style.width = '5em';
+        artikel.style.visibility = 'hidden';
+//        windrichting.style.transform = 'rotate('+ richting + 'deg)';
         aside.style.position = 'relative';
         aside.style.top = '-2em';
         knop.style.visibility = 'hidden';
@@ -53,7 +58,6 @@ function invullenHeader(jsonObj) {
         aside.style.visibility = 'visible';
         if (windkracht >= 5 && temperatuur >= 10) {
             myH2.textContent = 'Ja! Je kan vandaag gaan kitesurfen. Het is lekker warm en er staat een goede wind.';
-            console.log('topweer');
             afbeelding.src = 'img/kitesurf.gif';
         }
          else if (windkracht < 5 && temperatuur >= 10) {
@@ -69,30 +73,4 @@ function invullenHeader(jsonObj) {
             myH2.textContent = 'Nee, helaas. Het weer is niet goed en er staat niet genoeg wind om te surfen.';
             afbeelding.src = 'img/nokitesurf.gif';
         }
-    });
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    })})};
