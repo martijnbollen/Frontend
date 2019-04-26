@@ -83,7 +83,7 @@ knoppen.forEach(function (knop) {
             window.addEventListener('keydown', function (e) {
                 if (e.key === "Escape") {
                     console.log('goeie toets');
-                    location.reload(false);
+                    document.location.reload();
                 }
                 else {
                     alert("Deze toets doet niks. Probeer de Escape-toets is!");
@@ -99,7 +99,7 @@ knoppen.forEach(function (knop) {
             aside.style.display = 'none';
             section.style.display = 'block';
             H1.style.display = 'none';
-            setTimeout(derest, 6000, jsonObj);
+            setTimeout(derest, 4000, jsonObj);
         }
 
     });
