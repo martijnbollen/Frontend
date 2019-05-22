@@ -21,6 +21,11 @@ article {
     margin-top: 9%
 }
 
+section p {
+    font-size: 2em;
+    font-weight: 100;
+    text-transform: uppercase;
+}
 
 .loadingscreen {
     z-index: 2;
