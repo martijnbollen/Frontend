@@ -25,6 +25,6 @@ Echter lukte het mij maar niet om een loading state voor elkaar te krijgen. En i
 In deze file had ik de vrijheid om van alles te proberen en te doen, zonder dat ik mijn oorspronkelijke code verlies.
 
 Vandaar dat deze folder ooit is gecreerd. Ik presenteer u, poging 2 van een loading state, waarin vervolgens ook user controls zijn toegevoegt.
-https://martijnbollen.github.io/Frontend/opdracht3/poging%2%loading/
+https://martijnbollen.github.io/Frontend/opdracht3/poging%202%20loading/index.html
 
-https://koopreynders.github.io/frontendvoordesigners/opdracht1/v1/
+
